@@ -1,29 +1,26 @@
 // https://github.com/Mehzad-Galib/javascript_Assignment
-// Kilometer to meter conversion; 1km = 1000m;
+
+// Problem 1: Kilometer to meter conversion; 1km = 1000m;
 function kilometerToMeter(km) {
-    result = 0;
     if (km < 0) {
         return "Distance Cannot be Negative, Please try again";
     } else {
-        result = km * 1000;
-        return result;
+        let toMeter = km * 1000;
+        return toMeter;
     }
 }
 
-// Budget Calculator
+// Problem 2: Budget Calculator(50tk/watch, 100tk/phone, 500tk/laptop)
 function budgetCalculator(watch, phone, laptop) {
-    if (watch, phone, laptop < 0) {
-        return "Please input a Positive Number";
+    if (laptop < 0 || watch < 0 || phone < 0) {
+        return "Please input a Positive Quantity";
     } else {
-        let watchPrice = watch * 50;
-        let phonePrice = phone * 100;
-        let laptopPrice = laptop * 500;
-        let totalPrice = watchPrice + phonePrice + laptopPrice;
-        return totalPrice;
+        let totalCost = watch * 50 + phone * 100 + laptop * 500;
+        return totalCost;
     }
 }
 
-// Determining hotel cost
+// Problem 3: Determining hotel cost
 function hotelCost(days) {
     if (days < 0) {
         return "Days cannot be a negative number";
@@ -40,13 +37,17 @@ function hotelCost(days) {
     }
 }
 
-// 4th work; Finding Mega Friend 
+// Problem 4: Finding longest name of a friend in an Array 
 function megaFriend(arr) {
-    let result = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        if (result.length < arr[i].length) {
-            result = arr[i];
+    if (Array.isArray(arr) == false) {
+        return "This is not an Array";
+    } else {
+        let result = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (result.length < arr[i].length) {
+                result = arr[i];
+            }
         }
+        return result;
     }
-    return result;
 }
