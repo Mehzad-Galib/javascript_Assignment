@@ -10,13 +10,18 @@ function kilometerToMeter(km) {
     }
 }
 
+
 // Problem 2: Budget Calculator(50tk/watch, 100tk/phone, 500tk/laptop)
 function budgetCalculator(watch, phone, laptop) {
-    if (laptop < 0 || watch < 0 || phone < 0) {
-        return "Please input a Positive Quantity";
+    if (Number.isInteger(watch) == true && Number.isInteger(phone) == true && Number.isInteger(laptop) == true) {
+        if (laptop < 0 || watch < 0 || phone < 0) {
+            return "Please input a Positive Quantity";
+        } else {
+            let totalCost = watch * 50 + phone * 100 + laptop * 500;
+            return totalCost;
+        }
     } else {
-        let totalCost = watch * 50 + phone * 100 + laptop * 500;
-        return totalCost;
+        return "please input a valid number";
     }
 }
 
